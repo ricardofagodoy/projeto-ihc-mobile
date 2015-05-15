@@ -97,15 +97,19 @@ public class NavigationDrawerFragment extends Fragment {
                 selectItem(position);
             }
         });
+
+        String[] valorString = new String[MainActivity.drawerOptions.length];
+
+        for (int i=0; i < MainActivity.drawerOptions.length; i++)
+            valorString[i] = getString(getResources().getIdentifier(MainActivity.drawerOptions[i],"string",getActivity().getPackageName()));
+
+
         mDrawerListView.setAdapter(new ArrayAdapter<String>(
                 getActionBar().getThemedContext(),
                 android.R.layout.simple_list_item_activated_1,
                 android.R.id.text1,
-                new String[]{
-                        getString(R.string.title_section1),
-                        getString(R.string.title_section2),
-                        getString(R.string.title_section3),
-                }));
+                valorString));
+
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
     }

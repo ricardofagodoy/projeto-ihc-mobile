@@ -1,6 +1,7 @@
 package com.example.fepis.capital;
 
 import android.app.Activity;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -21,7 +23,11 @@ import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+    implements NavigationDrawerFragment.NavigationDrawerCallbacks, OnFragmentInteraction {
+
+    public static final String[] drawerOptions = new String[]{"ExtratosFragment"};
+
+    private static final String ARG_SECTION_NUMBER = "section_number";
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -32,6 +38,9 @@ public class MainActivity extends ActionBarActivity
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
     private CharSequence mTitle;
+
+    public void onFragmentInteraction(Uri uri){
+             }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,24 +60,31 @@ public class MainActivity extends ActionBarActivity
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();
+
+        String titulo =  MainActivity.drawerOptions[position];
+
+        try {
+            Class clazz = Class.forName("com.example.fepis.capital." + titulo);
+            Fragment fragment = (Fragment) clazz.newInstance();
+
+            FragmentManager fragmentManager = getSupportFragmentManager();
+
+            Bundle args = new Bundle();
+            args.putString("Titulo", getString(getResources().getIdentifier(titulo, "string", getPackageName())));
+
+            fragment.setArguments(args);
+
+            fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+
+        } catch(Exception e) {
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            Log.e("TESTE", e.toString());
+        }
+
     }
 
-    public void onSectionAttached(int number) {
-        switch (number) {
-            case 1:
-                mTitle = getString(R.string.title_section1);
-                break;
-            case 2:
-                mTitle = getString(R.string.title_section2);
-                break;
-            case 3:
-                mTitle = getString(R.string.title_section3);
-                break;
-        }
+    public void onSectionAttached(String titulo) {
+        mTitle = titulo;
     }
 
     public void restoreActionBar() {
@@ -115,7 +131,7 @@ public class MainActivity extends ActionBarActivity
          * The fragment argument representing the section number for this
          * fragment.
          */
-        private static final String ARG_SECTION_NUMBER = "section_number";
+
 
         /**
          * Returns a new instance of this fragment for the given section
@@ -149,12 +165,6 @@ public class MainActivity extends ActionBarActivity
             return rootView;
         }
 
-        @Override
-        public void onAttach(Activity activity) {
-            super.onAttach(activity);
-            ((MainActivity) activity).onSectionAttached(
-                    getArguments().getInt(ARG_SECTION_NUMBER));
-        }
     }
 
 }
