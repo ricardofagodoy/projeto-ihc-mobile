@@ -1,4 +1,4 @@
-package com.example.fepis.capital;
+package com.example.fepis.capital.fragments;
 
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
@@ -21,6 +21,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.example.fepis.capital.MainActivity;
+import com.example.fepis.capital.R;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -76,7 +79,7 @@ public class NavigationDrawerFragment extends Fragment {
         }
 
         // Select either the default item (0) or the last selected item.
-        selectItem(mCurrentSelectedPosition);
+        //selectItem(mCurrentSelectedPosition);
     }
 
     @Override

@@ -1,46 +1,26 @@
 package com.example.fepis.capital;
 
-import android.app.Activity;
 import android.net.Uri;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
+import android.support.v4.app.Fragment;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
 import android.widget.Toast;
-
+import com.example.fepis.capital.fragments.NavigationDrawerFragment;
+import com.example.fepis.capital.interfaces.OnFragmentInteraction;
 
 public class MainActivity extends ActionBarActivity
     implements NavigationDrawerFragment.NavigationDrawerCallbacks, OnFragmentInteraction {
 
-    public static final String[] drawerOptions = new String[]{"ExtratosFragment"};
+    public static final String[] drawerOptions = new String[]{
+            "ExtratosFragment"
+    };
 
-    private static final String ARG_SECTION_NUMBER = "section_number";
-
-    /**
-     * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
-     */
     private NavigationDrawerFragment mNavigationDrawerFragment;
-
-    /**
-     * Used to store the last screen title. For use in {@link #restoreActionBar()}.
-     */
     private CharSequence mTitle;
-
-    public void onFragmentInteraction(Uri uri){
-             }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +29,7 @@ public class MainActivity extends ActionBarActivity
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+
         mTitle = getTitle();
 
         // Set up the drawer.
@@ -59,32 +40,20 @@ public class MainActivity extends ActionBarActivity
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
-        // update the main content by replacing fragments
 
         String titulo =  MainActivity.drawerOptions[position];
 
         try {
-            Class clazz = Class.forName("com.example.fepis.capital." + titulo);
+            Class clazz = Class.forName(String.format("com.example.fepis.capital.fragments.%s", titulo));
             Fragment fragment = (Fragment) clazz.newInstance();
 
-            FragmentManager fragmentManager = getSupportFragmentManager();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
 
-            Bundle args = new Bundle();
-            args.putString("Titulo", getString(getResources().getIdentifier(titulo, "string", getPackageName())));
-
-            fragment.setArguments(args);
-
-            fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+            mTitle = getString(getResources().getIdentifier(titulo, "string", getPackageName()));
 
         } catch(Exception e) {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            Log.e("TESTE", e.toString());
         }
-
-    }
-
-    public void onSectionAttached(String titulo) {
-        mTitle = titulo;
     }
 
     public void restoreActionBar() {
@@ -94,9 +63,9 @@ public class MainActivity extends ActionBarActivity
         actionBar.setTitle(mTitle);
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
         if (!mNavigationDrawerFragment.isDrawerOpen()) {
             // Only show items in the action bar relevant to this screen
             // if the drawer is not showing. Otherwise, let the drawer
@@ -105,6 +74,7 @@ public class MainActivity extends ActionBarActivity
             restoreActionBar();
             return true;
         }
+
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -123,48 +93,9 @@ public class MainActivity extends ActionBarActivity
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
-
-
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-
-            TextView t = (TextView) rootView.findViewById(R.id.labelLogin);
-
-            t.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(getActivity(), "Teste :)", Toast.LENGTH_SHORT).show();
-                }
-            });
-
-            return rootView;
-        }
-
+    public void onSectionAttached(String titulo) {
     }
 
+    public void onFragmentInteraction(Uri uri){
+    }
 }
