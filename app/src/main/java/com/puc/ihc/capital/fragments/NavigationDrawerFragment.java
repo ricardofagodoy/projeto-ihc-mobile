@@ -1,4 +1,4 @@
-package com.example.fepis.capital.fragments;
+package com.puc.ihc.capital.fragments;
 
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
@@ -21,9 +21,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-
-import com.example.fepis.capital.MainActivity;
-import com.example.fepis.capital.R;
+import com.puc.ihc.capital.PrincipalActivity;
+import com.puc.ihc.capital.R;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -79,7 +78,7 @@ public class NavigationDrawerFragment extends Fragment {
         }
 
         // Select either the default item (0) or the last selected item.
-        //selectItem(mCurrentSelectedPosition);
+        selectItem(mCurrentSelectedPosition);
     }
 
     @Override
@@ -101,10 +100,10 @@ public class NavigationDrawerFragment extends Fragment {
             }
         });
 
-        String[] valorString = new String[MainActivity.drawerOptions.length];
+        String[] valorString = new String[PrincipalActivity.drawerOptions.length];
 
-        for (int i=0; i < MainActivity.drawerOptions.length; i++)
-            valorString[i] = getString(getResources().getIdentifier(MainActivity.drawerOptions[i],"string",getActivity().getPackageName()));
+        for (int i=0; i < PrincipalActivity.drawerOptions.length; i++)
+            valorString[i] = getString(getResources().getIdentifier(PrincipalActivity.drawerOptions[i],"string",getActivity().getPackageName()));
 
 
         mDrawerListView.setAdapter(new ArrayAdapter<String>(

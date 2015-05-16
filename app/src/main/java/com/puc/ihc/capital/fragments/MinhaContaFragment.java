@@ -1,4 +1,4 @@
-package com.example.fepis.capital.fragments;
+package com.puc.ihc.capital.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,18 +8,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import com.example.fepis.capital.R;
-import com.example.fepis.capital.interfaces.OnFragmentInteraction;
+import com.puc.ihc.capital.R;
+import com.puc.ihc.capital.interfaces.OnFragmentInteraction;
 
-public class ExtratosFragment extends Fragment {
+public class MinhaContaFragment extends Fragment {
 
     private OnFragmentInteraction mListener;
 
-    public ExtratosFragment() {
+    public MinhaContaFragment() {
     }
 
-    public static ExtratosFragment newInstance() {
-        return new ExtratosFragment();
+    public static MinhaContaFragment newInstance() {
+        return new MinhaContaFragment();
     }
 
     @Override
@@ -35,20 +35,14 @@ public class ExtratosFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_extratos, container, false);
-
-        ListView myList = (ListView) view.findViewById(R.id.listView);
-
-        ArrayAdapter<String> codeLearnArrayAdapter = new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, new String[]{"Teste", "Blabla"});
-        myList.setAdapter(codeLearnArrayAdapter);
-
+        View view = inflater.inflate(R.layout.fragment_minha_conta, container, false);
         return view;
     }
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        //((MainActivity) activity).onSectionAttached(getArguments().getString("Titulo"));
+        //((PrincipalActivity) activity).onSectionAttached(getArguments().getString("Titulo"));
     }
 
     @Override

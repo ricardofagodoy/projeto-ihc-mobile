@@ -1,4 +1,4 @@
-package com.example.fepis.capital;
+package com.puc.ihc.capital;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,13 +9,14 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
-import com.example.fepis.capital.fragments.NavigationDrawerFragment;
-import com.example.fepis.capital.interfaces.OnFragmentInteraction;
+import com.puc.ihc.capital.fragments.NavigationDrawerFragment;
+import com.puc.ihc.capital.interfaces.OnFragmentInteraction;
 
-public class MainActivity extends ActionBarActivity
+public class PrincipalActivity extends ActionBarActivity
     implements NavigationDrawerFragment.NavigationDrawerCallbacks, OnFragmentInteraction {
 
     public static final String[] drawerOptions = new String[]{
+            "MinhaContaFragment",
             "ExtratosFragment"
     };
 
@@ -25,7 +26,7 @@ public class MainActivity extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_principal);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -41,10 +42,10 @@ public class MainActivity extends ActionBarActivity
     @Override
     public void onNavigationDrawerItemSelected(int position) {
 
-        String titulo =  MainActivity.drawerOptions[position];
+        String titulo =  PrincipalActivity.drawerOptions[position];
 
         try {
-            Class clazz = Class.forName(String.format("com.example.fepis.capital.fragments.%s", titulo));
+            Class clazz = Class.forName(String.format("com.puc.ihc.capital.fragments.%s", titulo));
             Fragment fragment = (Fragment) clazz.newInstance();
 
             getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();

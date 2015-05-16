@@ -1,4 +1,4 @@
-package com.example.fepis.capital;
+package com.puc.ihc.capital;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -1,4 +1,4 @@
-package com.example.fepis.capital.interfaces;
+package com.puc.ihc.capital.interfaces;
 
 import android.net.Uri;
 
