@@ -19,7 +19,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -122,12 +121,10 @@ public class NavigationDrawerFragment extends Fragment {
 
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
 
-        View exitOption = inflater.inflate(R.layout.navigation_drawer_sair, null);
-        TextView exitText = (TextView) exitOption.findViewById(R.id.txtSair);
-        ImageView imgSair = (ImageView) exitOption.findViewById(R.id.imgSair);
+        View exitOption = inflater.inflate(android.R.layout.simple_list_item_activated_1, null);
+        TextView exitText = (TextView) exitOption.findViewById(android.R.id.text1);
 
-        exitText.setText(getString(R.string.sair));
-        imgSair.setImageResource(R.drawable.ic_drawer);
+        exitText.setText("Sair!!");
 
         mDrawerListView.setFooterDividersEnabled(true);
         mDrawerListView.addFooterView(exitOption);
