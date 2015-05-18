@@ -20,9 +20,13 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.puc.ihc.capital.PrincipalActivity;
 import com.puc.ihc.capital.R;
+import com.puc.ihc.capital.adapters.DrawerAdapter;
+
+import org.w3c.dom.Text;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -105,14 +109,26 @@ public class NavigationDrawerFragment extends Fragment {
         for (int i=0; i < PrincipalActivity.drawerOptions.length; i++)
             valorString[i] = getString(getResources().getIdentifier(PrincipalActivity.drawerOptions[i],"string",getActivity().getPackageName()));
 
+        DrawerAdapter adapter = new DrawerAdapter(getActivity(), valorString, PrincipalActivity.drawerOptionsIcons);
 
-        mDrawerListView.setAdapter(new ArrayAdapter<String>(
+        /*mDrawerListView.setAdapter(new ArrayAdapter<String>(
                 getActionBar().getThemedContext(),
                 android.R.layout.simple_list_item_activated_1,
                 android.R.id.text1,
-                valorString));
+                valorString)); */
+
+        mDrawerListView.setAdapter(adapter);
 
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
+
+        View exitOption = inflater.inflate(android.R.layout.simple_list_item_activated_1, null);
+        TextView exitText = (TextView) exitOption.findViewById(android.R.id.text1);
+
+        exitText.setText("Sair!!");
+
+        mDrawerListView.setFooterDividersEnabled(true);
+        mDrawerListView.addFooterView(exitOption);
+
         return mDrawerListView;
     }
 
@@ -194,7 +210,7 @@ public class NavigationDrawerFragment extends Fragment {
         mDrawerLayout.setDrawerListener(mDrawerToggle);
     }
 
-    private void selectItem(int position) {
+    public void selectItem(int position) {
         mCurrentSelectedPosition = position;
         if (mDrawerListView != null) {
             mDrawerListView.setItemChecked(position, true);

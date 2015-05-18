@@ -2,19 +2,28 @@
     <string name="app_name">Capital Bank</string>
 
     <string name="MinhaContaFragment">Minha Conta</string>
+    <string name="ContaCorrenteFragment">Conta Corrente</string>
+    <string name="PoupancaFragment">Poupança</string>
+    <string name="CreditoFragment">Cartão de Crédito</string>
     <string name="ExtratosFragment">Extratos</string>
+    <string name="TransferenciasFragment">Transferências</string>
+    <string name="PagamentosFragment">Pagamentos</string>
+    <string name="TokenFragment">Token Eletrônico</string>
+    <string name="ViagensFragment">Viagens</string>
+    <string name="RecargaFragment">Recarga celular</string>
+    <string name="AgenciasFragment">Agências</string>
+
+    <string name="title_activity_login">Acesse sua conta</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_example">Example action</string>
-
     <string name="action_settings">Settings</string>
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_main">Minha Conta</string>
-
     <string name="hello_world">Hello world!</string>
-    <string name="title_activity_login">Acesse sua conta</string>
+
 </resources>

@@ -17,8 +17,32 @@ public class PrincipalActivity extends ActionBarActivity
 
     public static final String[] drawerOptions = new String[]{
             "MinhaContaFragment",
-            "ExtratosFragment"
+            "ContaCorrenteFragment",
+            "PoupancaFragment",
+            "CreditoFragment",
+            "ExtratosFragment",
+            "TransferenciasFragment",
+            "PagamentosFragment",
+            "TokenFragment",
+            "ViagensFragment",
+            "RecargaFragment",
+            "AgenciasFragment"
     };
+
+    public static final Integer[] drawerOptionsIcons = new Integer[]{
+           R.drawable.ic_drawer,
+            R.drawable.ic_drawer,
+            R.drawable.ic_drawer,
+            R.drawable.ic_drawer,
+            R.drawable.ic_drawer,
+            R.drawable.ic_drawer,
+            R.drawable.ic_drawer,
+            R.drawable.ic_drawer,
+            R.drawable.ic_drawer,
+            R.drawable.ic_drawer,
+            R.drawable.ic_drawer
+    };
+
 
     private NavigationDrawerFragment mNavigationDrawerFragment;
     private CharSequence mTitle;
@@ -48,9 +72,13 @@ public class PrincipalActivity extends ActionBarActivity
             Class clazz = Class.forName(String.format("com.puc.ihc.capital.fragments.%s", titulo));
             Fragment fragment = (Fragment) clazz.newInstance();
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
-
             mTitle = getString(getResources().getIdentifier(titulo, "string", getPackageName()));
+
+            getSupportFragmentManager().
+                    beginTransaction().
+                    replace(R.id.container, fragment).
+                    addToBackStack(String.valueOf(position)).
+                    commit();
 
         } catch(Exception e) {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -98,5 +126,20 @@ public class PrincipalActivity extends ActionBarActivity
     }
 
     public void onFragmentInteraction(Uri uri){
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        Integer count = this.getSupportFragmentManager().getBackStackEntryCount();
+
+        if (count > 1) {
+            super.onBackPressed();
+
+            Integer position = Integer.parseInt(getSupportFragmentManager().getBackStackEntryAt(count-2).getName());
+            mTitle = getString(getResources().getIdentifier(PrincipalActivity.drawerOptions[position], "string", getPackageName()));
+            restoreActionBar();
+            mNavigationDrawerFragment.selectItem(position);
+        }
     }
 }
