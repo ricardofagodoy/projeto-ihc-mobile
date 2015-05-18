@@ -65,10 +65,9 @@ public class PrincipalActivity extends ActionBarActivity
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
-
-        String titulo =  PrincipalActivity.drawerOptions[position];
-
         try {
+            String titulo =  PrincipalActivity.drawerOptions[position];
+
             Class clazz = Class.forName(String.format("com.puc.ihc.capital.fragments.%s", titulo));
             Fragment fragment = (Fragment) clazz.newInstance();
 
@@ -81,8 +80,9 @@ public class PrincipalActivity extends ActionBarActivity
                     commit();
 
         } catch(Exception e) {
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
+            //Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            this.finish();
+    }
     }
 
     public void restoreActionBar() {
@@ -132,11 +132,12 @@ public class PrincipalActivity extends ActionBarActivity
     public void onBackPressed() {
 
         Integer count = this.getSupportFragmentManager().getBackStackEntryCount();
-
         if (count > 1) {
+
             super.onBackPressed();
 
             Integer position = Integer.parseInt(getSupportFragmentManager().getBackStackEntryAt(count-2).getName());
+            getSupportFragmentManager().popBackStack();
             mTitle = getString(getResources().getIdentifier(PrincipalActivity.drawerOptions[position], "string", getPackageName()));
             restoreActionBar();
             mNavigationDrawerFragment.selectItem(position);
