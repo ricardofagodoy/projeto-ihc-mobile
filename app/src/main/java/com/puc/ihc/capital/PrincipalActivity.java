@@ -8,7 +8,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 import com.puc.ihc.capital.fragments.NavigationDrawerFragment;
 import com.puc.ihc.capital.interfaces.OnFragmentInteraction;
 
@@ -30,7 +29,7 @@ public class PrincipalActivity extends ActionBarActivity
     };
 
     public static final Integer[] drawerOptionsIcons = new Integer[]{
-           R.drawable.ic_drawer,
+            android.R.drawable.ic_dialog_email,
             R.drawable.ic_drawer,
             R.drawable.ic_drawer,
             R.drawable.ic_drawer,

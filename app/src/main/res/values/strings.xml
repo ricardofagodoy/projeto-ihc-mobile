@@ -37,4 +37,10 @@
         <item>Hockey</item>
     </string-array>
 
+    <string-array name="ExtratoCorrente">
+        <item>12/03/2015 - Saque</item>
+        <item>16/08/2015 - Depósito</item>
+    </string-array>
+
+
 </resources>

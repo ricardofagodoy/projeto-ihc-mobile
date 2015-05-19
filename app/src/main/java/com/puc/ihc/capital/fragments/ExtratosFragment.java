@@ -37,10 +37,7 @@ public class ExtratosFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_extratos, container, false);
 
-        ListView myList = (ListView) view.findViewById(R.id.listView);
 
-        ArrayAdapter<String> codeLearnArrayAdapter = new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, new String[]{"Teste", "Blabla"});
-        myList.setAdapter(codeLearnArrayAdapter);
 
         return view;
     }

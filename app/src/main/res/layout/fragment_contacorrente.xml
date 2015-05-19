@@ -23,10 +23,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="De"
         android:id="@+id/textView3"
-        android:layout_below="@+id/textView2"
+        android:layout_alignBottom="@+id/editText4"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="32dp" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -34,8 +33,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Até"
         android:id="@+id/textView4"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/textView3"
+        android:layout_alignBottom="@+id/editText5"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -45,7 +43,7 @@
         android:inputType="date"
         android:ems="10"
         android:id="@+id/editText4"
-        android:layout_above="@+id/textView4"
+        android:layout_below="@+id/textView5"
         android:layout_toRightOf="@+id/textView2"
         android:layout_toEndOf="@+id/textView2" />
 
@@ -56,16 +54,24 @@
         android:ems="10"
         android:id="@+id/editText5"
         android:layout_below="@+id/editText4"
-        android:layout_alignLeft="@+id/editText4"
-        android:layout_alignStart="@+id/editText4" />
+        android:layout_toRightOf="@+id/textView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Cheque especial"
+        android:id="@+id/textView5"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/listView2"
-        android:layout_below="@+id/editText5"
+        android:id="@+id/listView"
+        android:layout_below="@+id/textView4"
         android:layout_alignParentLeft="true"
-        android:entries="@array/Corrente"
         android:layout_alignParentStart="true" />
 
 </RelativeLayout>

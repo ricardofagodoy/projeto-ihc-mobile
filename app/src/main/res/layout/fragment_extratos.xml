@@ -1,15 +1,138 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="com.puc.ihc.capital.Extratos">
+    android:layout_height="match_parent" tools:context="com.puc.ihc.capital.Extratos" android:padding="10dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
-    <ListView
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="282dp"
-        android:id="@+id/listView"
-        android:layout_gravity="center" />
+        android:layout_height="140dp"
+        android:id="@+id/card1"
+        card_view:contentPaddingRight="10dp"
+        card_view:contentPaddingLeft="10dp"
+        card_view:contentPaddingTop="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/card2"
+        android:layout_alignStart="@+id/card2">
 
-</FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Conta Corrente"
+            android:id="@+id/textView9"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="R$ 1500.00"
+            android:id="@+id/textView6"
+            android:layout_gravity="right"
+            android:textSize="20dp" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/listView2"
+            android:layout_gravity="bottom"
+            android:entries="@array/ExtratoCorrente"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="R$ 20,00"
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="65dp"
+            android:id="@+id/textView12"
+            android:layout_below="@+id/card1"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="#ff35b200" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="- R$ 33,00"
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="16dp"
+            android:id="@+id/textView13"
+            android:layout_below="@+id/card1"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="#ffe70300" />
+
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:id="@+id/card2"
+        card_view:contentPadding="10dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Poupança"
+            android:id="@+id/textView10"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="R$ 1500.00"
+            android:id="@+id/textView7"
+            android:layout_gravity="right"
+            android:textSize="20dp" />
+
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:id="@+id/card3"
+        card_view:contentPadding="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Cartão de Crédito"
+            android:id="@+id/textView11"
+            android:layout_alignBottom="@+id/textView7"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="R$ 1500.00"
+            android:id="@+id/textView8"
+            android:layout_gravity="right"
+            android:textSize="20dp" />
+
+
+
+    </android.support.v7.widget.CardView>
+
+
+
+</RelativeLayout>
