@@ -16,7 +16,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textSize="30dp" />
+        android:textSize="20dp"
+        android:layout_marginTop="-5dp"/>
 
 
     <android.support.v7.widget.CardView
@@ -27,7 +28,7 @@
         card_view:contentPaddingRight="10dp"
         card_view:contentPaddingLeft="10dp"
         card_view:contentPaddingTop="10dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/textView1"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true">
@@ -85,8 +86,6 @@
             android:layout_alignParentEnd="true"
             android:textColor="#ffe70300" />
 
-
-
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
@@ -100,7 +99,7 @@
         android:layout_below="@+id/card1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="25dp">
+        android:layout_marginTop="10dp">
 
 
         <TextView
@@ -151,6 +150,78 @@
             android:layout_marginBottom="16dp"
             android:id="@+id/textView11"
             android:layout_below="@+id/card1"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="#ffe70300" />
+
+
+
+    </android.support.v7.widget.CardView>
+
+
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:id="@+id/card3"
+        card_view:contentPaddingRight="10dp"
+        card_view:contentPaddingLeft="10dp"
+        card_view:contentPaddingTop="10dp"
+        android:layout_below="@+id/card2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Cartão de Crédito"
+            android:id="@+id/textView12"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="R$ 1500.00"
+            android:id="@+id/textView13"
+            android:layout_gravity="right"
+            android:textSize="20dp" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/listView14"
+            android:layout_gravity="bottom"
+            android:entries="@array/ExtratoCorrente"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="R$ 20,00"
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="65dp"
+            android:id="@+id/textView15"
+            android:layout_below="@+id/card3"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="#ff35b200" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="- R$ 33,00"
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="16dp"
+            android:id="@+id/textView16"
+            android:layout_below="@+id/card3"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:textColor="#ffe70300" />

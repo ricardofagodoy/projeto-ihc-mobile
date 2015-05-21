@@ -19,7 +19,6 @@ public class PrincipalActivity extends ActionBarActivity
             "ContaCorrenteFragment",
             "PoupancaFragment",
             "CreditoFragment",
-            "ExtratosFragment",
             "TransferenciasFragment",
             "PagamentosFragment",
             "TokenFragment",

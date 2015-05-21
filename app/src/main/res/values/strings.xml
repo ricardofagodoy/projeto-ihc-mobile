@@ -5,7 +5,6 @@
     <string name="ContaCorrenteFragment">Conta Corrente</string>
     <string name="PoupancaFragment">Poupança</string>
     <string name="CreditoFragment">Cartão de Crédito</string>
-    <string name="ExtratosFragment">Extratos</string>
     <string name="TransferenciasFragment">Transferências</string>
     <string name="PagamentosFragment">Pagamentos</string>
     <string name="TokenFragment">Token Eletrônico</string>
@@ -39,6 +38,20 @@
 
     <string-array name="ExtratoCorrente">
         <item>12/03/2015 - Saque</item>
+        <item>16/08/2015 - Depósito</item>
+    </string-array>
+
+
+    <string-array name="ContaCorrente">
+        <item>12/03/2015 - Saque</item>
+        <item>16/08/2015 - Depósito</item>
+        <item>16/08/2015 - Depósito</item>
+        <item>16/08/2015 - Depósito</item>
+        <item>16/08/2015 - Depósito</item>
+        <item>16/08/2015 - Depósito</item>
+        <item>16/08/2015 - Depósito</item>
+        <item>16/08/2015 - Depósito</item>
+        <item>16/08/2015 - Depósito</item>
         <item>16/08/2015 - Depósito</item>
     </string-array>
 
