@@ -23,7 +23,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="De"
         android:id="@+id/textView3"
-        android:layout_alignBottom="@+id/editText4"
+        android:layout_alignBottom="@+id/dataDe"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -33,7 +33,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Até"
         android:id="@+id/textView4"
-        android:layout_alignBottom="@+id/editText5"
+        android:layout_alignBottom="@+id/dataAte"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:inputType="date"
         android:ems="10"
-        android:id="@+id/editText4"
+        android:id="@+id/dataDe"
         android:layout_below="@+id/textView5"
         android:layout_toRightOf="@+id/textView2"
         android:layout_toEndOf="@+id/textView2" />
@@ -52,8 +52,8 @@
         android:layout_height="wrap_content"
         android:inputType="date"
         android:ems="10"
-        android:id="@+id/editText5"
-        android:layout_below="@+id/editText4"
+        android:id="@+id/dataAte"
+        android:layout_below="@+id/dataDe"
         android:layout_toRightOf="@+id/textView2" />
 
     <TextView

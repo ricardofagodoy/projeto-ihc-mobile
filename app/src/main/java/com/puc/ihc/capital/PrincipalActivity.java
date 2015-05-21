@@ -30,11 +30,11 @@ public class PrincipalActivity extends ActionBarActivity
 
     public static final Integer[] drawerOptionsIcons = new Integer[]{
             android.R.drawable.ic_dialog_email,
-            R.drawable.ic_drawer,
-            R.drawable.ic_drawer,
-            R.drawable.ic_drawer,
-            R.drawable.ic_drawer,
-            R.drawable.ic_drawer,
+            R.drawable.piggy_bank,
+            R.drawable.bank_binoculars,
+            R.drawable.bank_cards,
+            R.drawable.payment,
+            R.drawable.plane_icon,
             R.drawable.ic_drawer,
             R.drawable.ic_drawer,
             R.drawable.ic_drawer,
