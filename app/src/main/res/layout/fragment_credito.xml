@@ -74,7 +74,6 @@
         android:layout_height="match_parent"
         android:id="@+id/listView"
         android:layout_gravity="bottom"
-        android:entries="@array/ContaCorrente"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"

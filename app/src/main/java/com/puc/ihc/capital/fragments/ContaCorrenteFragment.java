@@ -14,9 +14,12 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
+import android.widget.ListView;
 
 import com.puc.ihc.capital.R;
+import com.puc.ihc.capital.adapters.ContaCorrenteAdapter;
 import com.puc.ihc.capital.interfaces.OnFragmentInteraction;
+import com.puc.ihc.capital.model.RegistroContaCorrente;
 
 import java.util.Calendar;
 
@@ -45,6 +48,20 @@ public class ContaCorrenteFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_contacorrente, container, false);
+
+        ListView lista = (ListView) view.findViewById(R.id.listCorrente);
+
+        ContaCorrenteAdapter adapter = new ContaCorrenteAdapter(getActivity(),
+                    new RegistroContaCorrente[] {
+                            new RegistroContaCorrente("12/08/2015 -","Deposito","R$ 220.00"),
+                            new RegistroContaCorrente("14/08/2015 -","Saque","R$ 110.00"),
+                            new RegistroContaCorrente("15/08/2015 -","Deposito","R$ 75.00"),
+                            new RegistroContaCorrente("21/08/2015 -","Saque","R$ 16.00"),
+                            new RegistroContaCorrente("29/08/2015 -","Deposito","R$ 1100.00")
+                    }
+                );
+
+        lista.setAdapter(adapter);
 
         EditText dataDe = (EditText) view.findViewById(R.id.dataDe);
         EditText dataAte = (EditText) view.findViewById(R.id.dataAte);
