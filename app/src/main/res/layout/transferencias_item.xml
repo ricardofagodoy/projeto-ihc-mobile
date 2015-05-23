@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff1aa1ff"
+    >
+
+        <TextView
+            android:id="@+id/nomeItem"
+            android:layout_width="85dp"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:textSize="21dp"
+            android:layout_weight="0"
+            android:paddingLeft="15dp"
+            />
+
+    <TextView
+        android:id="@+id/RS"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:textSize="18dp"
+        android:layout_weight="0"
+        android:text="R$"
+    />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:layout_gravity="center_vertical"
+        android:ems="10"
+        android:id="@+id/editMoney"
+        android:layout_marginLeft="3dp"
+        android:layout_weight="15"
+        android:layout_marginRight="15dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:text="Transferir"
+        android:layout_marginLeft="40dp"
+        android:layout_weight="0"
+        android:id="@+id/button2" />
+
+</LinearLayout>
