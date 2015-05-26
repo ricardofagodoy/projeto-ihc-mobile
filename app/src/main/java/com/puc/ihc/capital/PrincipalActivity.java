@@ -23,7 +23,6 @@ public class PrincipalActivity extends ActionBarActivity
             "PagamentosFragment",
             "TokenFragment",
             "ViagensFragment",
-            "RecargaFragment",
             "AgenciasFragment"
     };
 
@@ -34,7 +33,6 @@ public class PrincipalActivity extends ActionBarActivity
             R.drawable.bank_cards,
             R.drawable.payment,
             R.drawable.plane_icon,
-            R.drawable.ic_drawer,
             R.drawable.ic_drawer,
             R.drawable.ic_drawer,
             R.drawable.ic_drawer,

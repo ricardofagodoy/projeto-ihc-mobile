@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 
 import com.puc.ihc.capital.R;
 
-public class CartaoTab extends Fragment {
+public class ManualTab extends Fragment {
 
-    public CartaoTab() {}
+    public ManualTab() {}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,6 @@ public class CartaoTab extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.fragment_cartao_tab, container, false);
+        return inflater.inflate(R.layout.fragment_manual_tab, container, false);
     }
 }

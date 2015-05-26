@@ -11,6 +11,7 @@
             android:layout_weight="0.5"
             android:gravity="center_vertical"
             android:textSize="18dp"
+            android:paddingLeft="15dp"
             android:textStyle="italic"
             />
 

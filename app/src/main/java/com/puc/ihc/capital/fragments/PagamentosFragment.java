@@ -7,11 +7,14 @@ import android.support.v4.app.FragmentTabHost;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TabWidget;
+import android.widget.TextView;
+
 import com.puc.ihc.capital.R;
 import com.puc.ihc.capital.interfaces.OnFragmentInteraction;
 import com.puc.ihc.capital.tabs.BoletoTab;
-import com.puc.ihc.capital.tabs.CartaoTab;
-import com.puc.ihc.capital.tabs.QrTab;
+import com.puc.ihc.capital.tabs.ManualTab;
+import com.puc.ihc.capital.tabs.RecargaTab;
 
 public class PagamentosFragment extends Fragment {
 
@@ -46,9 +49,22 @@ public class PagamentosFragment extends Fragment {
        // mTabHost = (FragmentTabHost) view.findViewById(android.R.id.tabhost);
         //mTabHost.setup(getActivity(), getChildFragmentManager(), R.id.realtabcontent);
 
-        mTabHost.addTab(mTabHost.newTabSpec("boleto").setIndicator("Boleto"), BoletoTab.class, null);
-        mTabHost.addTab(mTabHost.newTabSpec("cartao").setIndicator("Cartão"), CartaoTab.class, null);
-        mTabHost.addTab(mTabHost.newTabSpec("qrcode").setIndicator("QR Code"), QrTab.class, null);
+        TabWidget tw = (TabWidget)mTabHost.findViewById(android.R.id.tabs);
+
+        mTabHost.addTab(mTabHost.newTabSpec("barras").setIndicator("Cód. Barras"), BoletoTab.class, null);
+
+        TextView tv = (TextView) tw.getChildTabViewAt(0).findViewById(android.R.id.title);
+        tv.setTextSize(11);
+
+        mTabHost.addTab(mTabHost.newTabSpec("manual").setIndicator("Manualmente"), ManualTab.class, null);
+
+        tv = (TextView) tw.getChildTabViewAt(1).findViewById(android.R.id.title);
+        tv.setTextSize(11);
+
+        mTabHost.addTab(mTabHost.newTabSpec("recarga").setIndicator("Recarga"), RecargaTab.class, null);
+
+        tv = (TextView) tw.getChildTabViewAt(2).findViewById(android.R.id.title);
+        tv.setTextSize(11);
 
         return mTabHost;
     }
