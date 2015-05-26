@@ -2,19 +2,16 @@ package com.puc.ihc.capital.fragments;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
-import android.app.ExpandableListActivity;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseExpandableListAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ExpandableListAdapter;
-import android.widget.ExpandableListView;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.puc.ihc.capital.R;
 import com.puc.ihc.capital.adapters.ContaCorrenteAdapter;
@@ -63,8 +60,21 @@ public class ContaCorrenteFragment extends Fragment {
 
         lista.setAdapter(adapter);
 
+        View header = inflater.inflate(R.layout.header, null);
+        TextView exitText = (TextView) header.findViewById(R.id.header);
+
+        exitText.setText("Lançamentos");
+
+        lista.addHeaderView(header);
+
         EditText dataDe = (EditText) view.findViewById(R.id.dataDe);
         EditText dataAte = (EditText) view.findViewById(R.id.dataAte);
+
+        ImageView dataDeImage = (ImageView) view.findViewById(R.id.imageDe);
+        dataDeImage.setTag(dataDe);
+
+        ImageView dataAteImage = (ImageView) view.findViewById(R.id.imageAte);
+        dataAteImage.setTag(dataAte);
 
         View.OnClickListener onDateFieldClick = new View.OnClickListener() {
             @Override
@@ -83,13 +93,24 @@ public class ContaCorrenteFragment extends Fragment {
                             public void onDateSet(DatePicker view, int year,
                                                   int monthOfYear, int dayOfMonth) {
 
-                            EditText dateField = (EditText) v;
-                                ((EditText) v).setText(String.format("%d/%d/%d", dayOfMonth, monthOfYear + 1, year));
+                                EditText dateField;
+
+                                if(v instanceof EditText) {
+                                    dateField = (EditText) v;
+                                } else {
+                                    dateField = (EditText) v.getTag();
+                                }
+
+                                dateField.setText(String.format("%d/%d/%d", dayOfMonth, monthOfYear + 1, year));
+
                             }
                         }, mYear, mMonth, mDay);
                 dpd.show();
             }
         };
+
+        dataDeImage.setOnClickListener(onDateFieldClick);
+        dataAteImage.setOnClickListener(onDateFieldClick);
 
         dataAte.setOnClickListener(onDateFieldClick);
         dataDe.setOnClickListener(onDateFieldClick);
