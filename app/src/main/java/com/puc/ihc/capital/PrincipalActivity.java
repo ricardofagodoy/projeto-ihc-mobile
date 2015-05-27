@@ -27,16 +27,16 @@ public class PrincipalActivity extends ActionBarActivity
     };
 
     public static final Integer[] drawerOptionsIcons = new Integer[]{
-            android.R.drawable.ic_dialog_email,
-            R.drawable.piggy_bank,
-            R.drawable.bank_binoculars,
-            R.drawable.bank_cards,
-            R.drawable.payment,
-            R.drawable.plane_icon,
-            R.drawable.ic_drawer,
-            R.drawable.ic_drawer,
-            R.drawable.ic_drawer,
-            R.drawable.ic_drawer
+            R.drawable.myaccount,       // Minha Conta
+            R.drawable.wallet,       // Conta Corrente
+            R.drawable.cifrao,                    // Poupança
+            R.drawable.credit_card,                    // Cartão de Crédito
+            R.drawable.transferencia,                       // Transferências
+            R.drawable.money_bag,                    // Pagamentos
+            R.drawable.key,                     // Token Eletronico
+            R.drawable.viagens,                     // Viagens
+            R.drawable.bussola,                 // Agencias
+            R.drawable.exit                        // Sair
     };
 
 

@@ -126,7 +126,7 @@ public class NavigationDrawerFragment extends Fragment {
         ImageView imgSair = (ImageView) exitOption.findViewById(R.id.imgSair);
 
         exitText.setText(getString(R.string.sair));
-        imgSair.setImageResource(R.drawable.ic_drawer);
+        imgSair.setImageResource(R.drawable.exit );
 
         mDrawerListView.setFooterDividersEnabled(true);
         mDrawerListView.addFooterView(exitOption);

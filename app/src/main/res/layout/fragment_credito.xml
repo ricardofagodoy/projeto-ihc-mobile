@@ -121,7 +121,7 @@
         android:layout_height="wrap_content"
         android:textSize="18dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="R$ 250.00"
+        android:text="R$ 5550.00"
         android:id="@+id/textView30"
         android:layout_marginLeft="10dp"
         android:layout_alignBottom="@+id/textView5"
