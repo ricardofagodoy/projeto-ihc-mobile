@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ff1aa1ff"
+    android:background="#ffadddff"
     >
 
         <TextView
@@ -30,7 +30,6 @@
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:layout_gravity="center_vertical"
-        android:ems="10"
         android:id="@+id/editMoney"
         android:layout_marginLeft="3dp"
         android:layout_weight="15"

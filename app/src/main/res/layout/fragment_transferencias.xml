@@ -3,7 +3,6 @@
 android:layout_width="match_parent"
 android:layout_height="match_parent">
 
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,13 +16,48 @@ android:layout_height="match_parent">
 
     <ExpandableListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="220dp"
         android:id="@+id/listTransferencias"
-        android:layout_alignParentBottom="true"
         android:layout_below="@+id/textView20"
         />
 
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:id="@+id/card2"
+        card_view:contentPaddingRight="10dp"
+        card_view:contentPaddingLeft="10dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        card_view:contentPaddingTop="5dp"
+        android:layout_below="@+id/listTransferencias">
 
+        <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+            android:text="Confirmação"
+            android:textSize="25dp"
+            android:id="@+id/textView22"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold" />
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Você confirma a transferência de R$ 295.00 para Antonio Freitas?"
+            android:textSize="20dp"
+            android:layout_marginTop="50dp"
+            android:id="@+id/textView24"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Confirmar"
+            android:id="@+id/button5"
+            android:layout_marginTop="120dp"/>
+
+    </android.support.v7.widget.CardView>
 
 </RelativeLayout>
 

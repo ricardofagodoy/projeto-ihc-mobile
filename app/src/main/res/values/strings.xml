@@ -36,10 +36,24 @@
         <item>Hockey</item>
     </string-array>
 
+    <string-array name="Viagens">
+        <item>China - 10/08/2015 até 22/01/2016</item>
+        <item>Japão - 24/09/2016 até 12/11/2016</item>
+    </string-array>
+
+    <string-array name="paises">
+        <item>Escolha o destino</item>
+        <item>China</item>
+        <item>Japão</item>
+        <item>Estados Unidos</item>
+        <item>Portugal</item>
+    </string-array>
+
     <string-array name="ExtratoCorrente">
         <item>12/03/2015 - Saque</item>
         <item>16/08/2015 - Depósito</item>
     </string-array>
+    <string name="title_activity_maps">Map</string>
 
 
 </resources>
