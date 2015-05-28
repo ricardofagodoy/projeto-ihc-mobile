@@ -1,7 +1,9 @@
 package com.puc.ihc.capital.fragments;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -81,7 +83,30 @@ public class TransferenciasFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_transferencias, container, false);
 
 
+        View cardToShow = view.findViewById(R.id.card2);
+
        final ExpandableListView lista = (ExpandableListView) view.findViewById(R.id.listTransferencias);
+
+        TextView ajuda = (TextView) view.findViewById(R.id.ajudaBeneficiados);
+
+        ajuda.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
+                alertDialog.setTitle("Beneficiados");
+                alertDialog.setMessage("Só é possível realizar transferências pelo celular para beneficiados previamente cadastrados," +
+                                        " e o cadastro só pode ser feito pelo site.");
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                alertDialog.show();
+            }
+        });
 
         List<String> listDataHeader = new ArrayList<String>();
         HashMap<String, List<String>> listDataChild = new HashMap<String, List<String>>();
@@ -99,7 +124,7 @@ public class TransferenciasFragment extends Fragment {
         listDataChild.put(listDataHeader.get(1), valor);
         listDataChild.put(listDataHeader.get(2), valor);
 
-        TransferenciasAdapter adapter = new TransferenciasAdapter(getActivity(), listDataHeader, listDataChild);
+        TransferenciasAdapter adapter = new TransferenciasAdapter(getActivity(), listDataHeader, listDataChild, cardToShow);
         lista.setAdapter(adapter);
 
         lista.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {

@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
 import com.puc.ihc.capital.R;
 
 public class BoletoTab extends Fragment {
@@ -20,6 +22,21 @@ public class BoletoTab extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.fragment_boleto_tab, container, false);
+        View view = inflater.inflate(R.layout.fragment_boleto_tab, container, false);
+
+        final View card1 = view.findViewById(R.id.card1);
+
+        final View card2 = view.findViewById(R.id.card2);
+        final Button btn = (Button) view.findViewById(R.id.button3);
+
+        card1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                card2.setVisibility(View.VISIBLE);
+                btn.setVisibility(View.VISIBLE);
+            }
+        });
+
+        return view;
     }
 }

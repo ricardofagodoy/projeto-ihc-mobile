@@ -43,6 +43,6 @@
         android:text="Transferir"
         android:layout_marginLeft="40dp"
         android:layout_weight="0"
-        android:id="@+id/button2" />
+        android:id="@+id/transferirButton" />
 
 </LinearLayout>

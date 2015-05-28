@@ -9,6 +9,7 @@ import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.puc.ihc.capital.R;
@@ -19,12 +20,14 @@ public class TransferenciasAdapter extends BaseExpandableListAdapter {
     private List<String> _listDataHeader; // header titles
     // child data in format of header title, child title
     private HashMap<String, List<String>> _listDataChild;
+    private View cardToShow;
 
     public TransferenciasAdapter(Context context, List<String> listDataHeader,
-                                 HashMap<String, List<String>> listChildData) {
+                                 HashMap<String, List<String>> listChildData, View cardToShow) {
         this._context = context;
         this._listDataHeader = listDataHeader;
         this._listDataChild = listChildData;
+        this.cardToShow = cardToShow;
     }
 
     @Override
@@ -53,6 +56,14 @@ public class TransferenciasAdapter extends BaseExpandableListAdapter {
         TextView txtListChild = (TextView) convertView.findViewById(R.id.nomeItem);
         EditText txtEdit = (EditText) convertView.findViewById(R.id.editMoney);
 
+        Button transferir = (Button) convertView.findViewById(R.id.transferirButton);
+
+        transferir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cardToShow.setVisibility(View.VISIBLE);
+            }
+        });
 
         txtEdit.setText("");
         txtListChild.setText(childText);

@@ -22,6 +22,7 @@ public class PrincipalActivity extends ActionBarActivity
             "TransferenciasFragment",
             "PagamentosFragment",
             "TokenFragment",
+            "RecargaFragment",
             "ViagensFragment",
             "AgenciasFragment"
     };
@@ -34,6 +35,7 @@ public class PrincipalActivity extends ActionBarActivity
             R.drawable.transferencia,                       // Transferências
             R.drawable.money_bag,                    // Pagamentos
             R.drawable.key,                     // Token Eletronico
+            R.drawable.phone,                     // Recarga celular
             R.drawable.viagens,                     // Viagens
             R.drawable.bussola,                 // Agencias
             R.drawable.exit                        // Sair
@@ -41,7 +43,7 @@ public class PrincipalActivity extends ActionBarActivity
 
 
     private NavigationDrawerFragment mNavigationDrawerFragment;
-    private CharSequence mTitle;
+    static private CharSequence mTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,6 +121,10 @@ public class PrincipalActivity extends ActionBarActivity
     }
 
     public void onSectionAttached(String titulo) {
+    }
+
+    public static void setTitle(String title) {
+        mTitle = title;
     }
 
     public void onFragmentInteraction(Uri uri){

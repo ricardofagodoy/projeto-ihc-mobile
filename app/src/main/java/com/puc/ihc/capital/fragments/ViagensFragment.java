@@ -1,7 +1,9 @@
 package com.puc.ihc.capital.fragments;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.puc.ihc.capital.R;
 import com.puc.ihc.capital.interfaces.OnFragmentInteraction;
@@ -41,6 +44,28 @@ public class ViagensFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_viagens, container, false);
+
+        TextView ajuda = (TextView) view.findViewById(R.id.ajudaViagens);
+
+        ajuda.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
+                alertDialog.setTitle("Viagens");
+                alertDialog.setMessage("Ao agendar uma viagem você informa ao banco que você estará fora do país no período especificado, " +
+                        "evitando o bloqueio indevido do seu cartão durante a viagem.");
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                alertDialog.show();
+            }
+        });
+
 
         EditText dataDe = (EditText) view.findViewById(R.id.dataDe);
         EditText dataAte = (EditText) view.findViewById(R.id.dataAte);

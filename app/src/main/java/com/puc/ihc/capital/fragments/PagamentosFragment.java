@@ -51,7 +51,7 @@ public class PagamentosFragment extends Fragment {
 
         TabWidget tw = (TabWidget)mTabHost.findViewById(android.R.id.tabs);
 
-        mTabHost.addTab(mTabHost.newTabSpec("barras").setIndicator("Cód. Barras"), BoletoTab.class, null);
+        mTabHost.addTab(mTabHost.newTabSpec("barras").setIndicator("Código de Barras"), BoletoTab.class, null);
 
         TextView tv = (TextView) tw.getChildTabViewAt(0).findViewById(android.R.id.title);
         tv.setTextSize(11);
@@ -61,10 +61,10 @@ public class PagamentosFragment extends Fragment {
         tv = (TextView) tw.getChildTabViewAt(1).findViewById(android.R.id.title);
         tv.setTextSize(11);
 
-        mTabHost.addTab(mTabHost.newTabSpec("recarga").setIndicator("Recarga"), RecargaTab.class, null);
+        //mTabHost.addTab(mTabHost.newTabSpec("recarga").setIndicator("Recarga"), RecargaTab.class, null);
 
-        tv = (TextView) tw.getChildTabViewAt(2).findViewById(android.R.id.title);
-        tv.setTextSize(11);
+        //tv = (TextView) tw.getChildTabViewAt(2).findViewById(android.R.id.title);
+        //tv.setTextSize(11);
 
         return mTabHost;
     }

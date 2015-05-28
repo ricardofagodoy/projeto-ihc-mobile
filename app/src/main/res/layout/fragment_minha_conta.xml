@@ -54,10 +54,9 @@
         <ListView
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:id="@+id/listView4"
+            android:id="@+id/listCorrente"
             android:layout_gravity="bottom"
-            android:entries="@array/ExtratoCorrente"
-            />
+            android:entries="@array/ExtratoCorrente" />
 
 
         <TextView
@@ -122,7 +121,7 @@
         <ListView
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:id="@+id/listView9"
+            android:id="@+id/listPoupanca"
             android:layout_gravity="bottom"
             android:entries="@array/ExtratoCorrente"
             />
@@ -194,7 +193,7 @@
         <ListView
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:id="@+id/listView14"
+            android:id="@+id/listCartao"
             android:layout_gravity="bottom"
             android:entries="@array/ExtratoCorrente"
             />
