@@ -15,12 +15,39 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnAcessar = (Button) this.findViewById(R.id.btnAcessar);
+        View btnAcessar = this.findViewById(R.id.card1);
+        View btnToken = this.findViewById(R.id.card2);
+        View btnContato = this.findViewById(R.id.card3);
+        View btnAgencias = this.findViewById(R.id.card4);
 
         btnAcessar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnToken.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), TokenActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnContato.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ContatoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnAgencias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), AgenciasActivity.class);
                 startActivity(intent);
             }
         });

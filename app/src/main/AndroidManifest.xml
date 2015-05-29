@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo50"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
 
@@ -20,6 +20,18 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name=".TokenActivity"
+            android:label="@string/title_activity_token" >
+        </activity>
+        <activity
+            android:name=".ContatoActivity"
+            android:label="@string/title_activity_contato" >
+        </activity>
+        <activity
+            android:name=".AgenciasActivity"
+            android:label="@string/title_activity_agencias" >
         </activity>
         <activity
             android:name=".PrincipalActivity"

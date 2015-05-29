@@ -8,44 +8,48 @@
     android:clickable="true"
     android:id="@+id/relative">
 
-    <TextView
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Bem vindo ao Capital Bank"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
+        android:layout_height="150dp"
+        android:id="@+id/card0"
+        card_view:cardBackgroundColor="#ffbac1bf"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textStyle="bold"
-        android:textColor="#ff2a0001"
-        android:typeface="sans"
-        android:textSize="25dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:gravity="center_horizontal" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="130dp"
-        android:text="Acesse sua conta"
-        android:id="@+id/btnAcessar"
-        android:textSize="22dp"
-        android:layout_below="@+id/textView"
         android:layout_marginTop="10dp"
-        android:layout_alignParentLeft="false"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/card2"
-        android:layout_alignEnd="@+id/card2" />
+        android:layout_marginBottom="40dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView7"
+        android:src="@drawable/capitalbank_p"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="O banco da sua vida"
+            android:id="@+id/textView"
+            android:textColor="#FFFFFFFF"
+            android:textSize="35dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="90dp"/>
+
+    </android.support.v7.widget.CardView>
+
 
     <android.support.v7.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:layout_width="160dp"
         android:layout_height="120dp"
         android:id="@+id/card1"
-        android:layout_below="@+id/btnAcessar"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/card0">
 
         <TextView
             android:layout_width="wrap_content"
