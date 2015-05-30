@@ -33,6 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/card1"
+            android:id="@+id/radioGroup1"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginTop="40dp">
@@ -93,6 +94,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
+            android:id="@+id/radioGroup2"
             android:layout_alignParentStart="true"
             android:layout_marginTop="40dp">
 
@@ -106,36 +108,36 @@
                     android:layout_height="wrap_content"
                     android:text="R$ 5.00"
                     android:textColor="@android:color/tertiary_text_dark"
-                    android:id="@+id/radioButton4"
+                    android:id="@+id/rb1"
                     android:textSize="20dp" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/radioButton4"
+                    android:layout_below="@+id/rb1"
                     android:text="R$ 9.00"
                     android:layout_marginTop="7dp"
                     android:textColor="@android:color/tertiary_text_dark"
-                    android:id="@+id/radioButton5"
+                    android:id="@+id/rb2"
                     android:textSize="20dp" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/radioButton5"
+                    android:layout_below="@+id/rb2"
                     android:layout_marginTop="7dp"
                     android:text="R$ 12.00"
                     android:textColor="@android:color/tertiary_text_dark"
-                    android:id="@+id/radioButton6"
+                    android:id="@+id/rb3"
                     android:textSize="20dp" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/radioButton6"
+                    android:layout_below="@+id/rb3"
                     android:layout_marginTop="7dp"
                     android:text="R$ 17.00"
-                    android:id="@+id/radioButton7"
+                    android:id="@+id/rb4"
                     android:textColor="@android:color/tertiary_text_dark"
                     android:textSize="20dp" />
 
@@ -144,11 +146,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="40dp"
-                    android:layout_toRightOf="@+id/radioButton4"
+                    android:layout_toRightOf="@+id/rb1"
                     android:layout_marginLeft="40dp"
                     android:textColor="@android:color/tertiary_text_dark"
                     android:text="R$ 22.00"
-                    android:id="@+id/radioButton8"
+                    android:id="@+id/rb5"
                     android:textSize="20dp" />
 
                 <RadioButton
@@ -158,10 +160,10 @@
                     android:layout_marginRight="40dp"
                     android:layout_marginLeft="40dp"
                     android:textColor="@android:color/tertiary_text_dark"
-                    android:layout_toRightOf="@+id/radioButton5"
-                    android:layout_below="@+id/radioButton8"
+                    android:layout_toRightOf="@+id/rb2"
+                    android:layout_below="@+id/rb5"
                     android:text="R$ 26.00"
-                    android:id="@+id/radioButton9"
+                    android:id="@+id/rb6"
                     android:textSize="20dp" />
 
                 <RadioButton
@@ -170,11 +172,11 @@
                     android:layout_marginTop="7dp"
                     android:layout_marginRight="40dp"
                     android:layout_marginLeft="30dp"
-                    android:layout_toRightOf="@+id/radioButton6"
-                    android:layout_below="@+id/radioButton9"
+                    android:layout_toRightOf="@+id/rb3"
+                    android:layout_below="@+id/rb6"
                     android:text="R$ 30.00"
                     android:textColor="@android:color/tertiary_text_dark"
-                    android:id="@+id/radioButton10"
+                    android:id="@+id/rb7"
                     android:textSize="20dp" />
 
                 <RadioButton
@@ -184,10 +186,10 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="40dp"
                     android:textColor="@android:color/tertiary_text_dark"
-                    android:layout_toRightOf="@+id/radioButton7"
+                    android:layout_toRightOf="@+id/rb4"
                     android:text="R$ 35.00"
-                    android:layout_below="@+id/radioButton10"
-                    android:id="@+id/radioButton11"
+                    android:layout_below="@+id/rb7"
+                    android:id="@+id/rb8"
                     android:textSize="20dp" />
 
             </RelativeLayout>

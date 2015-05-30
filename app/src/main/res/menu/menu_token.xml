@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.puc.ihc.capital.fragments.MinhaContaFragment">
 
-    <item android:id="@+id/action_search" android:title="@string/action_settings"
-        android:orderInCategory="100" android:icon="@drawable/ic_loop_white_24dp" app:showAsAction="always" />
+    <item android:id="@+id/action_help" android:title="Ajuda"
+        android:orderInCategory="100" android:icon="@drawable/ic_help_outline_white_24dp" app:showAsAction="always" />
 
 </menu>

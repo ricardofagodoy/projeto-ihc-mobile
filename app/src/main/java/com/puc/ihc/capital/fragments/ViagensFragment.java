@@ -7,8 +7,12 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -33,6 +37,7 @@ public class ViagensFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.setHasOptionsMenu(true);
 
         /*if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -67,8 +72,8 @@ public class ViagensFragment extends Fragment {
         });
 
 
-        EditText dataDe = (EditText) view.findViewById(R.id.dataDe);
-        EditText dataAte = (EditText) view.findViewById(R.id.dataAte);
+        final EditText dataDe = (EditText) view.findViewById(R.id.dataDe);
+        final EditText dataAte = (EditText) view.findViewById(R.id.dataAte);
 
         ImageView dataDeImage = (ImageView) view.findViewById(R.id.imageDe);
         dataDeImage.setTag(dataDe);
@@ -112,6 +117,29 @@ public class ViagensFragment extends Fragment {
         dataDeImage.setOnClickListener(onDateFieldClick);
         dataAteImage.setOnClickListener(onDateFieldClick);
 
+
+        Button btn = (Button) view.findViewById(R.id.button3);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
+                alertDialog.setTitle("Sucesso");
+                alertDialog.setMessage("Viagem agendada com sucesso!");
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                alertDialog.show();
+                dataDe.setText("");
+                dataAte.setText("");
+            }
+        });
+
         return view;
     }
 
@@ -127,4 +155,39 @@ public class ViagensFragment extends Fragment {
         mListener = null;
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+
+        super.onCreateOptionsMenu(menu, inflater);
+        menu.clear();
+
+        inflater.inflate(R.menu.menu_viagens, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_help) {
+
+            AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
+            alertDialog.setTitle("Ajuda");
+            alertDialog.setMessage("Ao agendar uma viagem você informa ao banco que você estará fora do país no período especificado, " +
+                    "evitando o bloqueio indevido do seu cartão durante a viagem.");
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+            alertDialog.show();
+
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }

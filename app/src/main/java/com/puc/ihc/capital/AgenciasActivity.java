@@ -3,6 +3,7 @@ package com.puc.ihc.capital;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
 
@@ -17,7 +18,7 @@ public class AgenciasActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_login, menu);
+        getMenuInflater().inflate(R.menu.menu_agencias, menu);
         return true;
     }
 
@@ -35,4 +36,5 @@ public class AgenciasActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

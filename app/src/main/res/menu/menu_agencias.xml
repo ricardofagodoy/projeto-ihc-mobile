@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.puc.ihc.capital.fragments.MinhaContaFragment">
+
+    <item android:id="@+id/action_search" android:title="Buscar"
+        android:orderInCategory="100" android:icon="@drawable/abc_ic_search_api_mtrl_alpha" app:showAsAction="always" />
+
+    <item android:id="@+id/action_map" android:title="Localizar"
+        android:orderInCategory="100" android:icon="@android:drawable/ic_dialog_map" app:showAsAction="always" />
+
+    <item android:id="@+id/agencia1" android:title="Agência 1 - Av. Grande"
+        android:orderInCategory="100" app:showAsAction="collapseActionView" />
+
+    <item android:id="@+id/agencia2" android:title="Agência 2 - Av. Campo Belo"
+        android:orderInCategory="100" app:showAsAction="collapseActionView" />
+
+    <item android:id="@+id/agencia3" android:title="Agência 3 - Av. das Palmeiras"
+        android:orderInCategory="100" app:showAsAction="collapseActionView" />
+
+</menu>

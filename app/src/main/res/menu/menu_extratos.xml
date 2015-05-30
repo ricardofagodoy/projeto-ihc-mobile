@@ -3,7 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.puc.ihc.capital.fragments.MinhaContaFragment">
 
-    <item android:id="@+id/action_search" android:title="@string/action_settings"
+    <item android:id="@+id/action_refresh" android:title="Atualizar"
         android:orderInCategory="100" android:icon="@drawable/ic_loop_white_24dp" app:showAsAction="always" />
 
+    <item android:id="@+id/salvarPdf" android:title="Salvar em PDF"
+        android:orderInCategory="100" app:showAsAction="collapseActionView" />
+
+    <item android:id="@+id/ajuda" android:title="Ajuda"
+        android:orderInCategory="100" app:showAsAction="collapseActionView" />
+    
 </menu>

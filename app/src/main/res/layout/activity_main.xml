@@ -30,7 +30,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="O banco da sua vida"
+            android:text="Muito mais por você"
             android:id="@+id/textView"
             android:textColor="#FFFFFFFF"
             android:textSize="35dp"

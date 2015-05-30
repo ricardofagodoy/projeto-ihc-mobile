@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.puc.ihc.capital.fragments.MinhaContaFragment">
+
+    <item android:id="@+id/camera" android:title="Fotografar"
+        android:orderInCategory="100" android:icon="@drawable/ic_camera_alt_white_24dp" app:showAsAction="always" />
+
+    <item android:id="@+id/remove" android:title="Limpar boleto"
+        android:orderInCategory="100" android:icon="@drawable/ic_delete_white_24dp" app:showAsAction="always" />
+
+    <item android:id="@+id/salvar" android:title="Salvar em PDF"
+        android:orderInCategory="100" app:showAsAction="collapseActionView" />
+
+    <item android:id="@+id/ajuda" android:title="Ajuda"
+        android:orderInCategory="100" app:showAsAction="collapseActionView" />
+    
+</menu>

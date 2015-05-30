@@ -8,11 +8,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -49,6 +53,8 @@ public class TransferenciasFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        this.setHasOptionsMenu(true);
+
         /*if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
         }*/
@@ -83,7 +89,7 @@ public class TransferenciasFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_transferencias, container, false);
 
 
-        View cardToShow = view.findViewById(R.id.card2);
+        final View cardToShow = view.findViewById(R.id.card2);
 
        final ExpandableListView lista = (ExpandableListView) view.findViewById(R.id.listTransferencias);
 
@@ -97,7 +103,7 @@ public class TransferenciasFragment extends Fragment {
                 AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
                 alertDialog.setTitle("Beneficiados");
                 alertDialog.setMessage("Só é possível realizar transferências pelo celular para beneficiados previamente cadastrados," +
-                                        " e o cadastro só pode ser feito pelo site.");
+                        "para remover ou cadastrar um novo beneficiado acesse o site.");
                 alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
@@ -141,6 +147,27 @@ public class TransferenciasFragment extends Fragment {
 
 
 
+        Button confirmar = (Button) view.findViewById(R.id.button5);
+
+        confirmar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
+                alertDialog.setTitle("Sucesso");
+                alertDialog.setMessage("Transferência realizada com sucesso!");
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                alertDialog.show();
+
+                cardToShow.setVisibility(View.GONE);
+            }
+        });
+
+
         return view;
     }
 
@@ -156,6 +183,42 @@ public class TransferenciasFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+
+        super.onCreateOptionsMenu(menu, inflater);
+        menu.clear();
+
+        inflater.inflate(R.menu.menu_transferencias, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.ajuda) {
+
+            AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
+            alertDialog.setTitle("Ajuda");
+            alertDialog.setMessage("Só é possível realizar transferências pelo celular para beneficiados previamente cadastrados, " +
+                    "para remover ou cadastrar um novo beneficiado acesse o site.");
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+            alertDialog.show();
+
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 }
