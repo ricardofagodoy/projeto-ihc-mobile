@@ -58,11 +58,11 @@ public class ContaCorrenteFragment extends Fragment {
 
         ContaCorrenteAdapter adapter = new ContaCorrenteAdapter(getActivity(),
                     new RegistroContaCorrente[] {
-                            new RegistroContaCorrente("12/08/2015 -","Deposito","R$ 220.00"),
-                            new RegistroContaCorrente("14/08/2015 -","Saque","R$ 110.00"),
+                            new RegistroContaCorrente("12/09/2015 -","Deposito","R$ 220.00"),
+                            new RegistroContaCorrente("10/09/2015 -","Saque","R$ 110.00"),
                             new RegistroContaCorrente("15/08/2015 -","Deposito","R$ 75.00"),
-                            new RegistroContaCorrente("21/08/2015 -","Saque","R$ 16.00"),
-                            new RegistroContaCorrente("29/08/2015 -","Deposito","R$ 1100.00")
+                            new RegistroContaCorrente("21/07/2015 -","Saque","R$ 16.00"),
+                            new RegistroContaCorrente("29/06/2015 -","Deposito","R$ 1100.00")
                     }
                 );
 

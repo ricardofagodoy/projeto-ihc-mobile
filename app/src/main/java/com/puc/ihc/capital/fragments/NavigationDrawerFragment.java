@@ -26,8 +26,6 @@ import com.puc.ihc.capital.PrincipalActivity;
 import com.puc.ihc.capital.R;
 import com.puc.ihc.capital.adapters.DrawerAdapter;
 
-import org.w3c.dom.Text;
-
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
  * See the <a href="https://developer.android.com/design/patterns/navigation-drawer.html#Interaction">

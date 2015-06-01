@@ -57,11 +57,11 @@ public class PoupancaFragment extends Fragment {
 
         ContaCorrenteAdapter adapter = new ContaCorrenteAdapter(getActivity(),
                 new RegistroContaCorrente[] {
-                        new RegistroContaCorrente("12/08/2015 -","Deposito","R$ 220.00"),
-                        new RegistroContaCorrente("14/08/2015 -","Saque","R$ 110.00"),
-                        new RegistroContaCorrente("15/08/2015 -","Deposito","R$ 75.00"),
-                        new RegistroContaCorrente("21/08/2015 -","Saque","R$ 16.00"),
-                        new RegistroContaCorrente("29/08/2015 -","Deposito","R$ 1100.00")
+                        new RegistroContaCorrente("12/10/2015 -","Deposito","R$ 800.00"),
+                        new RegistroContaCorrente("14/09/2015 -","Saque","R$ 300.00"),
+                        new RegistroContaCorrente("15/08/2015 -","Deposito","R$ 800.00"),
+                        new RegistroContaCorrente("21/07/2015 -","Saque","R$ 300.00"),
+                        new RegistroContaCorrente("12/07/2015 -","Deposito","R$ 800.00")
                 }
         );
 

@@ -20,6 +20,7 @@ import android.widget.TextView;
 
 import com.puc.ihc.capital.R;
 import com.puc.ihc.capital.adapters.ContaCorrenteAdapter;
+import com.puc.ihc.capital.adapters.CreditoAdapter;
 import com.puc.ihc.capital.interfaces.OnFragmentInteraction;
 import com.puc.ihc.capital.model.RegistroContaCorrente;
 
@@ -55,13 +56,13 @@ public class CreditoFragment extends Fragment {
 
         ListView lista = (ListView) view.findViewById(R.id.listCorrente);
 
-        ContaCorrenteAdapter adapter = new ContaCorrenteAdapter(getActivity(),
+        CreditoAdapter adapter = new CreditoAdapter(getActivity(),
                 new RegistroContaCorrente[] {
-                        new RegistroContaCorrente("12/08/2015 -","Deposito","R$ 220.00"),
-                        new RegistroContaCorrente("14/08/2015 -","Saque","R$ 110.00"),
-                        new RegistroContaCorrente("15/08/2015 -","Deposito","R$ 75.00"),
-                        new RegistroContaCorrente("21/08/2015 -","Saque","R$ 16.00"),
-                        new RegistroContaCorrente("29/08/2015 -","Deposito","R$ 1100.00")
+                        new RegistroContaCorrente("10/10/2015 -","Fnac","R$ 300.00"),
+                        new RegistroContaCorrente("22/09/2015 -","Cinema","R$ 85.00"),
+                        new RegistroContaCorrente("10/08/2015 -","Carrefour","R$ 15.00"),
+                        new RegistroContaCorrente("09/07/2015 -","Guitarra","R$ 640.00"),
+                        new RegistroContaCorrente("12/07/2015 -","Mc donalds","R$ 33.90")
                 }
         );
 

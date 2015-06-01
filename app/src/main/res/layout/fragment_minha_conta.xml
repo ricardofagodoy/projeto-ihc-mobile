@@ -113,7 +113,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="R$ 1500.00"
+            android:text="R$ 2300.00"
             android:id="@+id/textView8"
             android:layout_gravity="right"
             android:textSize="20dp" />
@@ -131,7 +131,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="R$ 20,00"
+            android:text="R$ 800,00"
             android:layout_gravity="right|bottom"
             android:layout_marginBottom="65dp"
             android:id="@+id/textView10"
@@ -144,7 +144,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="- R$ 33,00"
+            android:text="- R$ 200,00"
             android:layout_gravity="right|bottom"
             android:layout_marginBottom="16dp"
             android:id="@+id/textView11"
@@ -195,7 +195,7 @@
             android:layout_height="100dp"
             android:id="@+id/listCartao"
             android:layout_gravity="bottom"
-            android:entries="@array/ExtratoCorrente"
+            android:entries="@array/ExtratoCartao"
             />
 
 
@@ -203,20 +203,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="R$ 20,00"
+            android:text="- R$ 300,00"
             android:layout_gravity="right|bottom"
             android:layout_marginBottom="65dp"
             android:id="@+id/textView15"
             android:layout_below="@+id/card3"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:textColor="#ff35b200" />
+            android:textColor="#ffe70300" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="- R$ 33,00"
+            android:text="- R$ 85,00"
             android:layout_gravity="right|bottom"
             android:layout_marginBottom="16dp"
             android:id="@+id/textView16"

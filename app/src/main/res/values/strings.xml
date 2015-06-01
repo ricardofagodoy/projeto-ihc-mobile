@@ -56,6 +56,12 @@
         <item>12/03/2015 - Saque</item>
         <item>16/08/2015 - Depósito</item>
     </string-array>
+
+    <string-array name="ExtratoCartao">
+        <item>10/10/2015 - Fnac</item>
+        <item>22/09/2015 - Cinema</item>
+    </string-array>
+
     <string name="title_activity_maps">Map</string>
 
 

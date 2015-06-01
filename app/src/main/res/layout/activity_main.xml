@@ -24,6 +24,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView7"
         android:src="@drawable/capitalbank_p"
+        android:layout_marginLeft="10px"
+        android:layout_marginRight="10px"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

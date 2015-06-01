@@ -32,10 +32,10 @@ public class PrincipalActivity extends ActionBarActivity
     public static final Integer[] drawerOptionsIcons = new Integer[]{
             R.drawable.myaccount,       // Minha Conta
             R.drawable.wallet,       // Conta Corrente
-            R.drawable.cifrao,                    // Poupança
+            R.drawable.money_bag,                    // Poupança
             R.drawable.credit_card,                    // Cartão de Crédito
             R.drawable.transferencia,                       // Transferências
-            R.drawable.money_bag,                    // Pagamentos
+            R.drawable.cifrao,                    // Pagamentos
             R.drawable.key,                     // Token Eletronico
             R.drawable.phone,                     // Recarga celular
             R.drawable.viagens,                     // Viagens
