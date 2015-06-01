@@ -1,6 +1,8 @@
 package com.puc.ihc.capital;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,6 +18,8 @@ public class LoginActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        this.getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#546E7A")));
 
         RelativeLayout btnLogin = (RelativeLayout) this.findViewById(R.id.btnLogin);
 

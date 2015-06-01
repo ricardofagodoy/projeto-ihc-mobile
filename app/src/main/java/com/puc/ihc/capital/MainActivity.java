@@ -1,6 +1,8 @@
 package com.puc.ihc.capital;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,6 +16,8 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        this.getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#546E7A")));
 
         View btnAcessar = this.findViewById(R.id.card1);
         View btnToken = this.findViewById(R.id.card2);
